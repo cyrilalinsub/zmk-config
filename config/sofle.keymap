@@ -42,7 +42,7 @@
 &kp ESC   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp PIPE
 &kp LGUI  &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
 &kp LALT  &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &none      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp DEL
-                 &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &lt LOWER TAB   &lt RAISE BSPC  &kp SPACE  &kp RET &kp RALT  &kp RGUI
+                 &kp LGUI &kp LALT &kp LCTRL &kp RET &lt LOWER TAB   &lt RAISE BSPC  &mt LSHIFT SPACE  &kp C_MUTE &kp RALT  &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -53,10 +53,10 @@
 // TODO: Some binds are waiting for shifted keycode support.
 // ------------------------------------------------------------------------------------------------------------
 // |       |     |     |      |      |      |                   |      |       |       |      |      |     |
-// |   ~   |  {  |  &  |  *   |  (   |  }   |                   |  =   |  7    |  8    |  9   |  (   |  )  |
-// |       |  [  |  $  |  %   |  ^   |  ]   |                   |  ,   |  4    |  5    |  8   |  -   |  +  |
-// |       |  ~  |  !  |  @   |  #   |  _   |        |  |       |  .   |  1    |  2    |  3   |  /   |  *  |
-//               | LGUI| LALT | LCTRL| LSHFT|  trans |  |  BSPC |  0   |  RET  |       |      |            
+// |   ~   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |  )   |  _  |
+// |       |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |  0   |  |  |
+// |       |  -  |  +  |  =   |  [   |  {   |        |  |       |  }   |  ]    |  ,    |  .   |  /   |  \  |
+//               | LGUI| LALT | LCTRL| LSHFT|  trans |  |  BSPC |  trans  |  NONE  |   RALT    |   RGUI   |            
             bindings = <
 &none     &none     &none     &none       &none     &none                     &none     &none    &none  &none   &none     &none
 &kp TILDE &kp LBRC  &kp AMPS  &kp ASTRK   &kp LPAR  &kp RBRC                 &kp EQUAL &kp N7   &kp N8 &kp N9  &kp LPAR  &kp RPAR
@@ -72,9 +72,9 @@
             display-name = "raise";
 // ------------------------------------------------------------------------------------------------------------
 // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-// |       | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
-// |       | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
-// |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
+// |       |      |      |       |       |      |                | PGUP |      |   ^   |      |       |       |
+// |       |      |      |       |       |      |                | PGDN |   <- |   v   |  ->  |  BKSPC  | DEL |
+// |       |      |      |       |       |      |      |  |      |  F2    |      |       |      |       |       |
 //                |      |       |       |      |      |  |      |      |      |       |      |
             bindings = <
 &none      &none        &none        &none        &none         &none        &none     &none     &none    &none     &none      &none
