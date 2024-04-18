@@ -40,13 +40,13 @@
 // |   `   |  1  |  2  |  3   |  4   |  5   |                  |  6   |  7    |  8    |  9   |   0   |       |
 // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                  |  Y   |  U    |  I    |  O   |   P   |  DEL  |
 // |  LGUI |  A  |  S  |  D   |  F   |  G   |                  |  H   |  J    |  K    |  L   |   ;   |   '   |
-// |  LALT |  Z  |  X  |  C   |  V   |  B   |  MUTE |  |       |  N   |  M    |  ,    |  .   |   /   |  NONE |
-//               | LGUI| LALT | CTRL | LSHFT  |LWR/TAB|  |RAI/BSP| SPC| RET   |  RALT | RGUI |
+// |  LALT |  Z  |  X  |  C   |  V   |  B   |  MUTE |  |       |  N   |  M    |  ,    |  .   |   /   |  F2   |
+//               | LGUI| LALT | CTRL | LSHFT|LWR/TAB|  |RAI/BSP| SPC  | RET   |  RALT | RGUI |
             bindings = <
 &kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &none
 &kp ESC   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp DEL
 &kp LGUI  &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
-&kp LALT  &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &none      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &none
+&kp LALT  &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &none      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp F2
                  &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &lt LOWER TAB   &lt RAISE BSPC  &kp SPACE  &kp RET &kp RALT  &kp RGUI
             >;
 
@@ -63,31 +63,30 @@
 // |       |  -  |  +  |  =   |  [   |  {   |        |  |       |  }   |  ]    |  ,    |  .   |  /   |  \  |
 //               | LGUI| LALT | LCTRL| LSHFT|  trans |  |  BSPC |  trans  |  NONE  |   RALT    |   RGUI   |            
             bindings = <
-&none     &none     &none     &none       &none     &none                     &none     &none    &none  &none   &none     &none
+&none     &none     &none   &none       &none     &none                     &none     &none      &none     &none     &none     &none
 &kp TILDE &kp EXCL  &kp AT  &kp POUND   &kp DLLR  &kp PRCNT                 &kp CARET &kp AMPS   &kp ASTRK &kp LPAR  &kp RPAR  &kp UNDER
-&none    &kp N1  &kp N2  &kp N3  &kp N4 &kp N5                  &kp N6 &kp N7   &kp N8 &kp N9  &kp N0 &kp PIPE
-&none    &kp MINUS &kp PLUS  &kp EQUAL  &kp LBKT &kp LBRC  &trans &trans  &kp RBRC   &kp RBKT   &kp COMMA &kp PERIOD  &kp FSLH  &kp BSLH
+&none     &kp N1    &kp N2  &kp N3      &kp N4    &kp N5                    &kp N6    &kp N7     &kp N8    &kp N9    &kp N0    &kp PIPE
+&none     &kp MINUS &kp PLUS  &kp EQUAL &kp LBKT  &kp LBRC  &trans &trans   &kp RBRC  &kp RBKT   &kp COMMA &kp DOT   &kp FSLH  &kp BSLH
                     &kp LGUI  &kp LALT   &kp LCTRL &kp LSHFT  &trans &trans &kp SPACE   &kp RET  &kp RALT  &kp RGUI
             >;        
-
+ 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         raise_layer {
             display-name = "raise";
 // ------------------------------------------------------------------------------------------------------------
-// | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
+// |       |      |      |       |       |      |                |      |      |       |      |       |       |
 // |       |      |      |       |       |      |                | PGUP |      |   ^   |      |       |       |
-// |       |      |      |       |       |      |                | PGDN |   <- |   v   |  ->  |  BKSPC  | DEL |
-// |       |      |      |       |       |      |      |  |      |  F2    |      |       |      |       |       |
+// |       |      |      |       |       |      |                | PGDN |   <- |   v   |  ->  | BKSPC |  DEL  |
+// |       |      |      |       |       |      |      |  |      |      |      |       |      |       |       |
 //                |      |       |       |      |      |  |      |      |      |       |      |
             bindings = <
-&none      &none        &none        &none        &none         &none        &none     &none     &none    &none     &none      &none
-&none      &kp F12      &kp F7       &kp F8       &kp F9       &kp INS       &kp PG_UP &kp UP  &kp UP   &kp UP  &kp PG_UP  &kp C_VOL_UP
-&trans     &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp CLCK      &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &kp BSPC
-&kp CAPS   &kp F11      &kp F4       &kp F5       &kp F6       &kp HOME      &kp PG_DN &kp LEFT  &kp UP   &kp RIGHT  &kp PG_DN  &kp C_VOL_DN
-&kp PSCRN   &kp F10     &kp F1       &kp F2       &kp F3       &kp END  &trans &trans     &kp C_RW  &kp C_PREV  &kp C_PP   &kp C_NEXT  &kp C_FF &kp C_MUTE
-                    &kp LGUI  &kp LALT   &kp LCTRL &kp LSHFT  &trans &trans &none   &none  &none  &none
+&none      &none        &none        &none        &none       &none        &none     &none     &none    &none     &none      &none
+&none      &none        &none        &none        &none       &none        &kp PG_UP &kp UP  &kp UP   &kp UP  &none  &none
+&kp LGUI   &none        &none        &none        &none       &none        &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp BKSPC  &kp DEL
+&kp LALT   &none        &none        &none        &none       &none  &trans &trans   &kp C_RW  &kp C_PREV  &kp C_PP   &kp C_NEXT  &kp C_FF &kp C_MUTE
+                    &kp LGUI  &kp LALT   &kp LCTRL &kp LSHFT  &trans &trans &kp SPACE   &kp RET  &kp RALT &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
