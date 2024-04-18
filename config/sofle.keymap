@@ -15,6 +15,11 @@
 #define RAISE 2
 #define ADJUST 3
 
+&mt {
+    tapping-term-ms = <180>;
+    flavor = "balanced";
+};
+
 / {
 
    // Activate ADJUST layer by pressing raise and lower
@@ -36,13 +41,13 @@
 // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                  |  Y   |  U    |  I    |  O   |   P   |  DEL  |
 // |  LGUI |  A  |  S  |  D   |  F   |  G   |                  |  H   |  J    |  K    |  L   |   ;   |   '   |
 // |  LALT |  Z  |  X  |  C   |  V   |  B   |  MUTE |  |       |  N   |  M    |  ,    |  .   |   /   |  NONE |
-//               | LGUI| LALT | CTRL | LSHFT|LWR/TAB|  |RAI/BSP| SPACE|  RET  |  RALT | RGUI |
+//               | LGUI| LALT | CTRL | LSHFT  |LWR/TAB|  |RAI/BSP| SPC| RET   |  RALT | RGUI |
             bindings = <
 &kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &none
 &kp ESC   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp DEL
 &kp LGUI  &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
 &kp LALT  &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &none      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &none
-                 &kp LGUI &kp LALT &kp LCTRL &kp RET &lt LOWER TAB   &lt RAISE BSPC  &mt LSHIFT SPACE  &kp C_MUTE &kp RALT  &kp RGUI
+                 &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &lt LOWER TAB   &lt RAISE BSPC  &mt SPACE  &kp RET &kp RALT  &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -59,12 +64,18 @@
 //               | LGUI| LALT | LCTRL| LSHFT|  trans |  |  BSPC |  trans  |  NONE  |   RALT    |   RGUI   |            
             bindings = <
 &none     &none     &none     &none       &none     &none                     &none     &none    &none  &none   &none     &none
+&kp TILDE &kp EXCL  &kp AT  &kp POUND   &kp DLLR  &kp PRCNT                 &kp CARET &kp AMPS   &kp ASTRK &kp LPAR  &kp RPAR  &kp UNDER
+&none    &kp N1  &kp N2  &kp N3  &kp N4 &kp N5                  &kp N6 &kp N7   &kp N8 &kp N9  &kp N0 &kp PIPE
+&none    &kp MINUS &kp PLUS  &kp EQUAL  &kp LBKT &kp LBRC  &trans &trans  &kp RBRC   &kp RBKT   &kp COMMA &kp PERIOD  &kp FSLH  &kp BSLH
+                    &kp LGUI  &kp LALT   &kp LCTRL &kp LSHFT  &trans &trans &kp SPACE   &kp RET  &kp RALT  &RGUI
+            >;        
+bindings = <
+&none     &none     &none     &none       &none     &none                     &none     &none    &none  &none   &none     &none
 &kp TILDE &kp LBRC  &kp AMPS  &kp ASTRK   &kp LPAR  &kp RBRC                 &kp EQUAL &kp N7   &kp N8 &kp N9  &kp LPAR  &kp RPAR
 &none    &kp LBKT  &kp DLLR  &kp PRCNT   &kp CARET &kp RBKT                  &kp COMMA &kp N4   &kp N5 &kp N6  &kp MINUS &kp PLUS
 &none    &kp TILDE &kp EXCL  &kp AT      &kp POUND &kp UNDER  &trans &trans  &kp DOT   &kp N1   &kp N2 &kp N3  &kp FSLH  &kp ASTRK
                     &kp LGUI  &kp LALT   &kp LCTRL &kp LSHFT  &trans &trans &kp N0   &kp RET  &none  &none
-            >;        
-
+            >;    
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
