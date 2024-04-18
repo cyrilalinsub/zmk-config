@@ -83,7 +83,7 @@
 //                |      |       |       |      |      |  |      |      |      |       |      |
             bindings = <
 &none      &none        &none        &none        &none       &none        &none     &none     &none    &none     &none      &none
-&none      &none        &none        &none        &none       &none        &kp PG_UP &kp UP  &kp UP   &kp UP  &none  &none
+&none      &none        &none        &none        &none       &none        &kp PG_UP &kp UP    &kp UP   &kp UP    &none      &none
 &kp LGUI   &none        &none        &none        &none       &none        &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp BSPC  &kp DEL
 &kp LALT   &none        &none        &none        &none       &none  &trans &trans   &kp C_RW  &kp C_PREV  &kp C_PP   &kp C_NEXT  &kp C_FF &kp C_MUTE
                     &kp LGUI  &kp LALT   &kp LCTRL &kp LSHFT  &trans &trans &kp SPACE   &kp RET  &kp RALT &kp RGUI
@@ -94,18 +94,18 @@
 
         adjust_layer {
 // ----------------------------------------------------------------------------------------------------------------------------
-// | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
+// | BOOT   |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       | BOOT   |
 // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
 // |        | RGB_BRD | RGB_BRI |         |         |         |                  |      |      |       |      |       |       |
 // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
 //                    |         |         |         |         |         | |      |      |      |       |      |
             display-name = "adjust";
             bindings = <
-&bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                            &none &none &none &none &none &none
-&ext_power EP_TOG &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF                         &none &none &none &none &none &none
-&none             &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none           &none           &none                                   &none &none &none &none &none &none
-&none             &none           &none           &none           &none           &none            &rgb_ug RGB_TOG &none  &none &none &none &none &none &none
-                                  &none           &none           &none           &none            &none           &none  &none &none &none &none
+&bootloader  &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                                 &none &none &none &none &none &bootloader
+&ext_power EP_TOG   &kp F11         &kp F12         &none           &none           &none                                        &none &none &none &none &none &none
+&none        &kp F1          &kp F2          &kp F3          &kp F4          &kp F5                                   &kp F6 &F7 &F8 &F9 &F10 &none
+&bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4           &none &none  &none &none &none &none &none &none
+                                  &kp LGUI           &kp LALT           &kp LCTRL           &kp LSHFT            &trans           &trans  &kp SPACE &kp RET &kp RALT &kp RGUI
             >;
         };
 
